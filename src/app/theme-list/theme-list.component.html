@@ -1,0 +1,23 @@
+<!-- theme component  -->
+<app-loader *ngIf="!themes"></app-loader>
+<div class="theme-container" *ngFor="let theme of themes;let i=index">
+    <div class="theme-name-wrapper">
+        <div class="theme-name">
+            <a href="#" class="normal">
+                <h2>{{i}}{{theme.themeName}}</h2>
+            </a>
+            <div class="columns">
+                <div>
+                    <p>Date: <time>{{theme.created_at}}</time></p>
+                    <div class="nick-name">
+                        <p>Username: {{theme.userId.username}}</p>
+                    </div>
+                </div>
+                <div class="subscribers">
+                    <!-- <button class="unsubscribe">Unsubscribe</button> -->
+                    <p>Subscribers: <span>{{theme.subscribers.length}}</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
